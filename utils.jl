@@ -5,6 +5,7 @@ using PyPlot
 using PhysicalConstants.CODATA2014: c_0
 using QuadGK
 using Roots
+using HypergeometricFunctions
 
 abstract type Detector end
 
