@@ -1,4 +1,5 @@
 name = "GWSC"
+<<<<<<< HEAD
 uuid = "13605eb4-7e26-11e9-1115-f51d9e886ef4"
 authors = ["Zu-Cheng Chen"]
 version = "0.1.0"
@@ -16,6 +17,14 @@ UnitfulAstro = "6112ee07-acf9-5e0f-b108-d242c714bf9f"
 
 [compat]
 julia = "1.0"
+=======
+uuid = "227202be-7e1e-11e9-3dd2-4d5cad677dd2"
+authors = ["Zu-Cheng Chen"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+>>>>>>> 5559996083fa71abd7e610227d2da4329b6a2499
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"

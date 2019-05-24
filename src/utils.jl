@@ -1,3 +1,4 @@
+
 abstract type Detector end
 
 # spedd of light in vaccum (m/s)

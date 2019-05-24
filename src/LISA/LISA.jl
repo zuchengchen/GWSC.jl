@@ -1,5 +1,4 @@
 # TODO: extend this module
-
 "LISA modulation frequency"
 fm = 3.168753575e-8  
 
