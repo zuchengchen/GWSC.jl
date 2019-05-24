@@ -6,7 +6,8 @@
 GWSC is the julia package to calculate and plot sensitivity curves for gravitational-wave detectors.
 
 ## Install
-using Pkg; Pkg.add("https://github.com/bingining/GWSC.jl.git")
+using Pkg;
+Pkg.add(PackageSpec(url="https://github.com/bingining/GWSC.jl.git"))
 
 ## Example
 
