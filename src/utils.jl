@@ -40,7 +40,9 @@ function backup(array1, array2, fileName::String)
     len = length(array1)
     open(fileName, "w") do io
         for i in 1:len
-            write(io, string(array1[i])*"  "*string(array2[i])*"\n")
+            if array2[i] != Inf # throw the infinity numbers
+                write(io, string(array1[i])*"  "*string(array2[i])*"\n")
+            end
         end
     end
 end
