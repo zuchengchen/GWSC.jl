@@ -1,7 +1,7 @@
 name = "GWSC"
 uuid = "13605eb4-7e26-11e9-1115-f51d9e886ef4"
 authors = ["Zu-Cheng Chen"]
-version = "0.1.0"
+version = "0.2.0"
 
 [deps]
 DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
