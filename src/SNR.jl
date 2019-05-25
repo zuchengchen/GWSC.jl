@@ -19,8 +19,11 @@ function getΩβ(det::Detector, β)
 end
 
 # TODO: add more explanation
-function ΩPI(det::Detector; fRange=nothing, nPoints=10^3, 
-        ρth=nothing)
+function ΩPI(det::Detector; 
+        fRange=nothing, 
+        nPoints=10^3, 
+        ρth=nothing,
+        file=nothing)
     
     if typeof(det)==PTA
         βs=[-200:20:-10; -10:2:0; 0:0.5:10]
@@ -48,6 +51,10 @@ function ΩPI(det::Detector; fRange=nothing, nPoints=10^3,
     ΩgwLines = map(β -> Ωgw(getΩβ(det, β), β, fRef).(fs), βs)
     
     ΩPIs = [maximum(hcat(ΩgwLines...)'[:,i]) for i in 1:nPoints]
+    
+    if file != nothing
+        backup(fs, ΩPIs, file)
+    end
     
     fs, ΩPIs, ΩgwLines
 end
