@@ -2,7 +2,6 @@ __precompile__()
 
 module GWSC
 
-using DelimitedFiles
 using DelimitedFiles:readdlm
 using Interpolations
 using Unitful, UnitfulAstro
@@ -10,8 +9,6 @@ using PyPlot
 using PhysicalConstants.CODATA2014: c_0
 using QuadGK
 using Roots
-# using HypergeometricFunctions
-
 
 export
     YEAR,
