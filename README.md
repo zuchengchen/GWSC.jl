@@ -32,7 +32,7 @@ More complete examples can be found at https://github.com/bingining/GWSC.jl/tree
 - Implement the Bayesian approch for PTA
 - Probably write an article to explain the algorithms implemented in the package
 - Do more tests
-- Register as an offical julia package when possible
+- Register as an offical julia package if possible
 
 ## References
 
