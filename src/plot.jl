@@ -136,3 +136,46 @@ function plotSpectralDensity(lisa::LISA; file=nothing,
     end
 end
 
+# TODO: add more explanation
+function plotΩPI(det::Detector; 
+        figure_file=nothing, 
+        plotΩPIQ=true, 
+        plotΩeffQ=false, 
+        plotΩPILinesQ=false,
+        fPlotRange=nothing,
+        ΩPlotRange=nothing)
+    
+    fs, ΩPIResult, ΩPILines  = ΩPI(det)
+    Ωeffs = det.Ωeff.(fs)
+    
+    if fPlotRange == nothing
+        fPlotRange = det.fPlotRange
+    end
+    
+    if ΩPlotRange == nothing
+        ΩPlotRange = det.ΩPlotRange
+    end
+    
+    xlim(fPlotRange)
+    ylim(ΩPlotRange)    
+    
+    grid("on", which="both", linestyle="--")
+    
+    if plotΩPIQ != false
+        loglog(fs, ΩPIResult, "black", label=L"Ω$_{\mathrm{PI}}$")        
+    end
+    
+    if plotΩeffQ == true
+        loglog(fs, Ωeffs, "b", label=L"Ω$_{\mathrm{eff}}$")
+        if typeof(det)==PTA 
+            vlines(det.fMin, det.Ωeff(det.fMin), ΩPlotRange[2], "b")
+        end
+    end
+    
+    if plotΩPILinesQ == true 
+        [loglog(fs, ΩPILines[i], "--", color="gray") for i in 1:length(ΩPILines)]
+    end
+    
+    legend()
+    show()
+end
