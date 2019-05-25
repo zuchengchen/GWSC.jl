@@ -30,6 +30,7 @@ More complete examples can be found at https://github.com/bingining/GWSC.jl/tree
 - Add other detectors: LIGO, KAGRA, BBO, DECIGO ...
 - Add more comments, explanations and examples
 - Implement the Bayesian approch for PTA
+- Add h_c PI curve
 - Probably write an article to explain the algorithms implemented in the package
 - Do more tests
 - Register as an offical julia package if possible
