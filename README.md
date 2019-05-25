@@ -22,6 +22,7 @@ julia> using GWSC
 julia> ipta = PTA(NP=36, σRMS=1e2, TObs=20.);
 julia> plotΩPI(ipta, plotΩeff=true, plotΩPILines=true, ΩPlotRange=(1e-15, 1e-8))
 ```
+![](https://github.com/bingining/GWSC.jl/blob/master/test/pta.png)
 
 More complete examples can be found at https://github.com/bingining/GWSC.jl/tree/master/examples
 
