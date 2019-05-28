@@ -22,7 +22,8 @@ export
     plotΩPI,
     plotCharacteristicStrain,
     plotSpectralDensity,
-    ΩPI
+    ΩPI,
+    SNR
 
 include("utils.jl")
 include("LISA/LISA.jl")

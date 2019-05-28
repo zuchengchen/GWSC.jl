@@ -104,24 +104,40 @@ struct PTA <: Detector
 end
 
 
+# # TODO: add more explanation
+# function SNR(pta::PTA, β, Ωβ)
+#     β, Ωβ = big(β), big(Ωβ)
+    
+#     fMin, fMax, fRef = pta.fMin, pta.fMax, big(pta.fRef) 
+    
+#     N = pta.NP
+    
+#     T = pta.TObs * YEAR # (s)
+#     ζ2 = 1/48. # square of the average of Hellings and Downs factor
+    
+#     # B*f^b
+#     integral(f) = 1.0/(1+pta.Ωn(f)/Ωgw(Ωβ, β, fRef)(f))^2
+#     println(integral(pta.fRef))
+    
+#     int0 = quadgk(integral, fMin, fMax, rtol=1e-4)[1]
+    
+#     snr2 = 2T*N*(N-1)/2*ζ2*int0
+#     snr = sqrt(snr2)
+# end
+
+
 # TODO: add more explanation
-function SNR(pta::PTA, β, Ωβ)
-    β, Ωβ = big(β), big(Ωβ)
+function SNR(pta::PTA, Ωgw::Function)
     
-    Δt = pta.Δt # (s)
-    σ = pta.σRMS*1e-9 # (s)
-    A = 16*π^4*Δt*σ^2/H0^2
-    b = β-5
-    
-    fMin, fMax, fRef = pta.fMin, pta.fMax, big(pta.fRef) 
+    fMin, fMax, fRef = pta.fMin, pta.fMax, pta.fRef 
     
     N = pta.NP
     
     T = pta.TObs * YEAR # (s)
     ζ2 = 1/48. # square of the average of Hellings and Downs factor
     
-    # B*f^b
-    integral(f) = 1.0/(1+pta.Ωn(f)/Ωgw(Ωβ, β, fRef)(f))^2
+    integral(f) = 1.0/(1+pta.Ωn(f)/Ωgw(f))^2
+    
     int0 = quadgk(integral, fMin, fMax, rtol=1e-4)[1]
     
     snr2 = 2T*N*(N-1)/2*ζ2*int0

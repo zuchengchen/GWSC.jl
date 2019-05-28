@@ -191,3 +191,18 @@ struct LISA <: Detector
             Pn, Sn, Pn_WC, Sn_WC, SnC, Ωn, Ωeff, ρThSGWB)
     end       
 end
+
+
+# TODO: add more explanation
+function SNR(det::LISA, Ωgw::Function)
+    
+    fMin, fMax, fRef = det.fMin, det.fMax, det.fRef 
+    
+    T = det.TObs * YEAR # (s)
+    
+    integral(f) = (Ωgw(f)/det.Ωn(f))^2
+    
+    int0 = quadgk(integral, fMin, fMax, rtol=1e-4)[1]
+    
+    snr = sqrt(T*int0)
+end
