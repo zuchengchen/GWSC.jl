@@ -1,4 +1,5 @@
 # TODO: extend this module
+
 "LISA modulation frequency"
 fm = 3.168753575e-8  
 
@@ -85,7 +86,7 @@ function getSnC(f::Float, TObs::Float=4.0, NC::Int=2)
     A = 1.8e-44/NC
     
     # Eq.(14)
-    A*f^(-7.0/3.) * exp(-f^α + β*f*sin(κ*f)) * (1.0 + tanh(γ*(fk - f)))
+    A*f^(-7.0/3.) * exp(-f^α + β*f*sin(κ*f)) * (1.0 + tanh(γ*(fk-f)))
 end
 
 

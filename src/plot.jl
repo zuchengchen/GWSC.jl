@@ -27,8 +27,8 @@ function plotCharacteristicStrain(lisa::LISA; file=nothing,
     xlabel("Frequency (Hz)") 
     ylabel("Characteristic Strain") 
     
-    xlim(1.0e-5, 1.0e0)
-    ylim(3.0e-22, 1.0e-15)
+    xlim(1e-5, 1e0)
+    ylim(3e-22, 1e-15)
     
     if plotSn_WCQ != false
         Sn_WC = lisa.Sn_WC.(f)

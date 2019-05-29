@@ -7,8 +7,8 @@ function getΩβ(det::Detector, β)
     ρTh = det.ρThSGWB
     
     if typeof(det)==PTA
-        Ωβ -> SNR(det, Ωgw(Ωβ, β, det.fRef)) - ρTh
-        return find_zero(, (1e-500, 1e100))
+        equation = Ωβ -> SNR(det, Ωgw(Ωβ, β, det.fRef)) - ρTh
+        return find_zero(equation, (1e-500, 1e100))
     end
     
     integral(f) = (f/det.fRef)^(2*β)/det.Ωeff(f)^2
@@ -29,7 +29,7 @@ function ΩPI(det::Detector;
         file=nothing)
     
     if typeof(det)==PTA
-        βs=[-150:20:-10; -10:2:0; 0:0.5:10]
+        βs=[-200:20:-10; -10:2:0; 0:0.5:10]
     else
         βs=-10:0.5:10
     end
