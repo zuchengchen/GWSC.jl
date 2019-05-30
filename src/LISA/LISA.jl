@@ -203,7 +203,11 @@ function SNR(det::LISA, Ωgw::Function)
     
     integral(f) = (Ωgw(f)/det.Ωeff(f))^2
     
-    int0 = quadgk(integral, fMin, fMax, rtol=1e-5)[1]
+    logfMin = log10(det.fMin)
+    logfMax = log10(det.fMax)
+    f1, f2, f3, f4, f5, f6 = 10 .^ collect(range(logfMin, logfMax, length=6))
+    
+    int0 = quadgk(integral, f1, f2, f3, f4, f5, f6, rtol=1e-7)[1]
         
     snr = sqrt(T*int0)
 end

@@ -85,7 +85,7 @@ struct PTA <: Detector
         
         fMin = 1/T # (Hz)
         fMax = 0.5/Δt # Nyquist frequency (Hz)
-        fPlotRange=(fMin*1e-1, fMin*1e2)
+        fPlotRange=(fMin*1e-1, fMax*1e1)
         
         R(f) = 1/(12π^2*f^2)
         Pn(f) = fMin ≤ f ≤ fMax ? 2Δt*σ^2 : Inf # Eq.(40)
@@ -127,18 +127,22 @@ end
 
 
 # TODO: add more explanation
-function SNR(pta::PTA, Ωgw::Function)
+function SNR(det::PTA, Ωgw::Function)
     
-    fMin, fMax, fRef = pta.fMin, pta.fMax, pta.fRef 
+    fMin, fMax, fRef = det.fMin, det.fMax, det.fRef 
     
-    N = pta.NP
+    N = det.NP
     
-    T = pta.TObs * YEAR # (s)
+    T = det.TObs * YEAR # (s)
     ζ2 = 1/48. # square of the average of Hellings and Downs factor
     
-    integral(f) = 1.0/(1+pta.Ωn(f)/Ωgw(f))^2
+    integral(f) = 1.0/(1+det.Ωn(f)/Ωgw(f))^2
     
-    int0 = quadgk(integral, fMin, fMax, rtol=1e-4)[1]
+    logfMin = log10(det.fMin)
+    logfMax = log10(det.fMax)
+    f1, f2, f3, f4, f5, f6 = 10 .^ collect(range(logfMin, logfMax, length=6))
+    
+    int0 = quadgk(integral, f1, f2, f3, f4, f5, f6, rtol=1e-7)[1]
     
     snr2 = 2T*N*(N-1)/2*ζ2*int0
     snr = sqrt(snr2)
