@@ -178,7 +178,7 @@ struct LISA <: Detector
         # total noise in Michelson-style LISA data channel, Eq.(12) 
         Pn(f) = P_OMS(f)/LArm^2 + 2(1 + cos(f/fStar)^2)*P_acc(f)/(2pi*f)^4/LArm^2
         
-        Sn(f) = Pn(f)/R(f) 
+        Sn(f) = fMin<f<fMax ? Pn(f)/R(f) : Inf
         
         SnC(f) = getSnC(f, TObs, NC)
         Sn_WC(f) = Sn(f) + SnC(f)
@@ -201,9 +201,9 @@ function SNR(det::LISA, Ωgw::Function)
     
     T = det.TObs * YEAR # (s)
     
-    integral(f) = (Ωgw(f)/det.Ωn(f))^2
+    integral(f) = (Ωgw(f)/det.Ωeff(f))^2
     
-    int0 = quadgk(integral, fMin, fMax, rtol=1e-4)[1]
-    
+    int0 = quadgk(integral, fMin, fMax, rtol=1e-5)[1]
+        
     snr = sqrt(T*int0)
 end

@@ -29,7 +29,7 @@ function ΩPI(det::Detector;
         file=nothing)
     
     if typeof(det)==PTA
-        βs=[-200:20:-10; -10:2:0; 0:0.5:10]
+        βs=[-150:20:-10; -10:2:0; 0:0.5:10]
     else
         βs=-10:0.5:10
     end
