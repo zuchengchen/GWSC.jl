@@ -18,6 +18,7 @@ const H0 = ustrip(uconvert(u"s"^-1, 67.66 * u"km" * u"Mpc"^-1 * u"s"^-1))
 
 const Float = Float64
 
+
 """
     backup(array1, array2, fileName::String)
 
@@ -31,6 +32,10 @@ Write the contents of two arrays to a file.
 """
 function backup(array1, array2, fileName::String)
     
+    if isdir("backup") == false
+        mkdir("backup")
+    end
+    
     if length(array1) != length(array2)
         print("The two arrays do not have the same number of elements.
             I will quit now!")
@@ -38,7 +43,9 @@ function backup(array1, array2, fileName::String)
     end
     
     len = length(array1)
-    open(fileName, "w") do io
+    file = "backup/" * fileName
+    
+    open(file, "w") do io
         for i in 1:len
             if array2[i] != Inf # throw the infinity numbers
                 write(io, string(array1[i])*"  "*string(array2[i])*"\n")
