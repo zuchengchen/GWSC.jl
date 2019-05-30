@@ -23,7 +23,8 @@ export
     plotCharacteristicStrain,
     plotSpectralDensity,
     ΩPI,
-    SNR
+    SNR,
+    backup
 
 include("utils.jl")
 include("LISA/LISA.jl")
