@@ -133,7 +133,7 @@ function SNR(det::LIGO, Ωgw::Function)
     logfMax = log10(det.fMax)
     f1, f2, f3, f4, f5, f6 = 10 .^ collect(range(logfMin, logfMax, length=6))
     
-    int0 = quadgk(integral, f1, f2, f3, f4, f5, f6, rtol=1e-7)[1]
+    int0 = quadgk(integral, f1, f2, f3, f4, f5, f6, rtol=1e-6)[1]
         
     snr = sqrt(2T*int0)
 end
