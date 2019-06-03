@@ -27,6 +27,7 @@ export
     backup
 
 include("utils.jl")
+include("LIGO/LIGO.jl")
 include("LISA/LISA.jl")
 include("PTA/PTA.jl")
 include("SNR.jl")

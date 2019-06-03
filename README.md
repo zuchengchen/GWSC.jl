@@ -27,7 +27,8 @@ julia> plotΩPI(ipta, plotΩeffQ=true, plotΩPILinesQ=true, ΩPlotRange=(1e-15, 
 More complete examples can be found at https://github.com/bingining/GWSC.jl/tree/master/examples
 
 ## TODO List
-- Add other detectors: LIGO, KAGRA, BBO, DECIGO ...
+
+- Add other detectors: BBO, DECIGO ...
 - Add more comments, explanations and examples
 - Implement the Bayesian approch for PTA
 - Add h_c PI curve
