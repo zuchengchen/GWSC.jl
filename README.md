@@ -41,3 +41,8 @@ More complete examples can be found at https://github.com/bingining/GWSC.jl/tree
 * https://arxiv.org/abs/1310.5300
 * https://arxiv.org/abs/1406.5199
 * https://arxiv.org/abs/1803.01944
+
+## License
+
+This project is licensed under the GNU License - see the [LICENSE.md](LICENSE.md) file for details.
+
