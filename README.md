@@ -42,7 +42,12 @@ More complete examples can be found at https://github.com/bingining/GWSC.jl/tree
 * https://arxiv.org/abs/1406.5199
 * https://arxiv.org/abs/1803.01944
 
+## Contributors
+
+* **Zu-Cheng Chen** - [bingining](https://github.com/bingining/)
+
+Please email the author with any bugs or requests. 
+
 ## License
 
-This project is licensed under the GNU License - see the [LICENSE](LICENSE) file for details.
-
+This project is licensed under the GPL3 License - see the [LICENSE](LICENSE) file for details.
