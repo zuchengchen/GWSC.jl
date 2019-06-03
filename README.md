@@ -24,7 +24,7 @@ julia> plotΩPI(ipta, plotΩeffQ=true, plotΩPILinesQ=true, ΩPlotRange=(1e-15, 
 ```
 ![](https://github.com/bingining/GWSC.jl/blob/master/test/pta.png)
 
-More complete examples can be found at https://github.com/bingining/GWSC.jl/tree/master/examples
+More complete examples can be found at [examples](https://github.com/bingining/GWSC.jl/tree/master/examples)
 
 ## TODO List
 
