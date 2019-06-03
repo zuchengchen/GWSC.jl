@@ -44,5 +44,5 @@ More complete examples can be found at https://github.com/bingining/GWSC.jl/tree
 
 ## License
 
-This project is licensed under the GNU License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the GNU License - see the [LICENSE](LICENSE) file for details.
 
