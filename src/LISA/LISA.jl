@@ -23,7 +23,7 @@ function RLISA(fStar::Float=19.09e-3, NC::Int=2; approRQ=false)
     end
     
     file = joinpath(sensitivity_path, "RLISA.txt")
-    RData = readdlm() # read in the data
+    RData = readdlm(file) # read in the data
         
     f = RData[:, 1]*fStar # convert to frequency
     R = RData[:, 2]*NC # response gets improved by more data channels
