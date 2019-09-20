@@ -14,7 +14,7 @@ using Roots
 const src_path = @__DIR__
 
 # location of sensitivity files
-const sensitivity_path = normpath(joinpath(src_path, "Sensitivity_curves"))
+const sensitivity_path = normpath(joinpath(src_path, "sensitivity_data"))
 
 export
     YEAR,
@@ -34,9 +34,9 @@ export
     backup
 
 include("utils.jl")
-include("LIGO/LIGO.jl")
-include("LISA/LISA.jl")
-include("PTA/PTA.jl")
+include("LIGO.jl")
+include("LISA.jl")
+include("PTA.jl")
 include("SNR.jl")
 include("plot.jl")
 
