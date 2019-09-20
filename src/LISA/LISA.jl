@@ -17,13 +17,13 @@ Calculate the transfer function (sky and polarization averaged).
 """
 function RLISA(fStar::Float=19.09e-3, NC::Int=2; approRQ=false)  
     
-    if approRQ == true
-        
+    if approRQ == true        
         # return an approximated version of transfer function
         return f::Float -> NC * 3.0/20.0/(1.0 + 0.6*(f/fStar)^2)
     end
     
-    RData = readdlm(sensitivity_path * "/RLISA.txt") # read in the data
+    file = joinpath(sensitivity_path, "RLISA.txt")
+    RData = readdlm() # read in the data
         
     f = RData[:, 1]*fStar # convert to frequency
     R = RData[:, 2]*NC # response gets improved by more data channels

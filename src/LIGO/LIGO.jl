@@ -82,7 +82,8 @@ struct LIGO <: Detector
             ρThSGWB=1.0)
         
         # read in the data interpolate ASD 
-        ASDData = readdlm("Sensitivity_curves/"*ASDFile(name)) 
+        ASD_file = joinpath(sensitivity_path, ASDFile(name))
+        ASDData = readdlm(ASD_file) 
         
         fsASD = ASDData[:, 1] # frequency
         ASDs = ASDData[:, 2] # ASD        
@@ -98,7 +99,8 @@ struct LIGO <: Detector
         Pn(f) = Sn(f) # because R(f)=1
         
         # interpolate the normalized overlap function
-        γData = readdlm("Sensitivity_curves/H1L1_orf.dat")
+        overlap_file = joinpath(sensitivity_path, "H1L1_orf.dat")
+        γData = readdlm(overlap_file)
         fsγ = γData[:, 1]
         γs = γData[:, 2]
         

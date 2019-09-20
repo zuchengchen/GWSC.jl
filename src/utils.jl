@@ -17,12 +17,6 @@ const H0 = ustrip(uconvert(u"s"^-1, 67.66 * u"km" * u"Mpc"^-1 * u"s"^-1))
 
 const Float = Float64
 
-# source path
-const src_path = @__DIR__
-
-# location of sensitivity files
-const sensitivity_path = normpath(joinpath(src_path, "../Sensitivity_curves"))
-
 """
     backup(array1, array2, fileName::String)
 

@@ -10,6 +10,12 @@ using PhysicalConstants.CODATA2014: c_0
 using QuadGK
 using Roots
 
+# source path
+const src_path = @__DIR__
+
+# location of sensitivity files
+const sensitivity_path = normpath(joinpath(src_path, "Sensitivity_curves"))
+
 export
     YEAR,
     DAY,
