@@ -136,7 +136,7 @@ function SNR(det::PTA, Ωgw::Function)
     T = det.TObs * YEAR # (s)
     ζ2 = 1/48. # square of the average of Hellings and Downs factor
     
-    integral(f) = 1.0/(1+det.Ωn(f)/Ωgw(f))^2
+    integral(f) = 1.0/(1+det.Ωn(f)/Ωgw(f))^2.0
     
     logfMin = log10(det.fMin)
     logfMax = log10(det.fMax)

@@ -201,7 +201,7 @@ function SNR(det::LISA, Ωgw::Function)
     
     T = det.TObs * YEAR # (s)
     
-    integral(f) = (Ωgw(f)/det.Ωeff(f))^2
+    integral(f) = 1.0/(1+det.Ωeff(f)/Ωgw(f))^2.0
     
     logfMin = log10(det.fMin)
     logfMax = log10(det.fMax)
