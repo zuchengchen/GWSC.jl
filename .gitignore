@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 *.jl.*.cov
 *.jl.cov
 *.jl.mem
 .DS_Store
-/dev/
-/docs/build/
-/docs/site/
-=======
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -79,4 +74,3 @@ venv.bak/
 *Notes.bib
 *.out
 *.synctex.gz
->>>>>>> 5559996083fa71abd7e610227d2da4329b6a2499
