@@ -140,7 +140,7 @@ function SNR(det::PTA, Ωgw::Function)
     
     logfMin = log10(det.fMin)
     logfMax = log10(det.fMax)
-    f1, f2, f3, f4, f5, f6 = 10 .^ collect(range(logfMin, logfMax, length=6))
+    f1, f2, f3, f4, f5, f6 = 10 .^ range(logfMin, logfMax, length=6)
     
     int0 = quadgk(integral, f1, f2, f3, f4, f5, f6, rtol=1e-7)[1]
     
