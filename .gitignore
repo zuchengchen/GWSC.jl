@@ -3,7 +3,7 @@
 *.jl.mem
 .DS_Store
 docs/build/
-docs/site/
+#docs/site/
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
