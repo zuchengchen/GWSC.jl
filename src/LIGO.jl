@@ -90,6 +90,7 @@ struct LIGO <: Detector
         fsASD = ASDData[:, 1] # frequency
         ASDs = ASDData[:, 2] # ASD        
         fMinASD, fMaxASD = fsASD[1], fsASD[end]
+        fPlotRange = (fMinASD, fMaxASD)
                
         # convert back to normal scale
         ASD = interLogxLogyIn(fsASD, ASDs)
