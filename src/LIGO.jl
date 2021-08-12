@@ -14,7 +14,7 @@ function ASDFile(name::String)
         ASDFile = "LIGO-P1200087-v18-aLIGO_DESIGN.txt"
     elseif name == "ET"
 #         ASDFile = "LIGO-P1600143-v18-ET_D.txt"
-        ASDFile = "ET-0000A-18_ETDSensitivityCurveTxtFile"
+        ASDFile = "ET-0000A-18_ETDSensitivityCurveTxtFile.txt"
     elseif name == "CE"
         ASDFile = "LIGO-P1600143-v18-CE.txt"
     end
