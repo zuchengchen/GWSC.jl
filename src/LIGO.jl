@@ -112,8 +112,8 @@ struct LIGO <: Detector
         
         Γ(f) = 1/5 * γ(f)
         
-        Ωn(f) = (2*π^2/3/H0^2) * f^3 * Sn(f)
-        Ωeff(f) = (2/NDet/(NDet-1)) * Ωn(f)/Γ(f)^2
+        Ωn(f) = (2*π^2/3/H0^2) * f^3 * Sn(f) # eq.(3)
+        Ωeff(f) = sqrt((2/NDet/(NDet-1))) * Ωn(f)/Γ(f)
         
         new(name, TObs, NDet, R, 
             fMin, fMax, fRef, fPlotRange, ΩPlotRange, hPlotRange, 
