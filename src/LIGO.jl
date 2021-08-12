@@ -13,7 +13,8 @@ function ASDFile(name::String)
     elseif name == "LIGO_Design"
         ASDFile = "LIGO-P1200087-v18-aLIGO_DESIGN.txt"
     elseif name == "ET"
-        ASDFile = "LIGO-P1600143-v18-ET_D.txt"
+#         ASDFile = "LIGO-P1600143-v18-ET_D.txt"
+        ASDFile = "ET-0000A-18_ETDSensitivityCurveTxtFile"
     elseif name == "CE"
         ASDFile = "LIGO-P1600143-v18-CE.txt"
     end
@@ -83,6 +84,7 @@ struct LIGO <: Detector
         
         # read in the data interpolate ASD 
         ASD_file = joinpath(sensitivity_path, ASDFile(name))
+        println("using $ASD_file")
         ASDData = readdlm(ASD_file) 
         
         fsASD = ASDData[:, 1] # frequency
