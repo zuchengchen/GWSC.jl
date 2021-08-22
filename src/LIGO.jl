@@ -109,19 +109,19 @@ struct LIGO <: Detector
         
         # interpolate the normalized overlap function
         overlap_file = joinpath(sensitivity_path, "H1L1_orf.dat")
-#         γData = readdlm(overlap_file)
-#         fsγ = γData[:, 1]
-#         γs = γData[:, 2]
+        γData = readdlm(overlap_file)
+        fsγ = γData[:, 1]
+        γs = γData[:, 2]
         
-#         fMinγ, fMaxγ = fsγ[1], fsγ[end]        
-#         fMin = max(fMinASD, fMinγ)
-#         fMax = min(fMaxASD, fMaxγ)
+        fMinγ, fMaxγ = fsγ[1], fsγ[end]        
+        fMin = max(fMinASD, fMinγ)
+        fMax = min(fMaxASD, fMaxγ)
         
-#         γ = interLogxIn(fsγ, γs)
+        γ = interLogxIn(fsγ, γs)
         
-#         Γ(f) = 1/5 * γ(f)
-        fMin, fMax = fMinASD, fMaxASD
-        Γ(f) = 1/5
+        Γ(f) = 1/5 * γ(f)
+#         fMin, fMax = fMinASD, fMaxASD
+#         Γ(f) = 1/5
         
         Ωn(f) = (2*π^2/3/H0^2) * f^3 * Sn(f) # eq.(3)
         Ωeff(f) = sqrt((2/NDet/(NDet-1))) * Ωn(f)/Γ(f)
