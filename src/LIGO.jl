@@ -5,7 +5,7 @@ function ASDFile(name::String)
     elseif name == "LIGO_O2"
         ASDFile = "LIGO-P1200087-v18-aLIGO_MID_LOW.txt"
     elseif name == "LIGO_O3"
-        ASDFile = "o3_h1.txt"
+        ASDFile = "o3_l1.txt"
     elseif name == "LIGO_O32"
         ASDFile = "LIGO-P1200087-v18-aLIGO_MID_HIGH.txt"
     elseif name == "LIGO_O5"
