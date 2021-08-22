@@ -5,18 +5,24 @@ function ASDFile(name::String)
     elseif name == "LIGO_O2"
         ASDFile = "LIGO-P1200087-v18-aLIGO_MID_LOW.txt"
     elseif name == "LIGO_O3"
+        ASDFile = "o3_h1.txt"
+    elseif name == "LIGO_O32"
         ASDFile = "LIGO-P1200087-v18-aLIGO_MID_HIGH.txt"
     elseif name == "LIGO_O5"
         ASDFile = "LIGO-P1200087-v18-aLIGO_LATE_HIGH.txt"
     elseif name == "KAGRA_Design"
         ASDFile = "LIGO-T1600593-v1-KAGRA_Design.txt"
     elseif name == "LIGO_Design"
+        ASDFile = "aligo_design.txt"
+    elseif name == "LIGO_Design2"
         ASDFile = "LIGO-P1200087-v18-aLIGO_DESIGN.txt"
     elseif name == "ET"
 #         ASDFile = "LIGO-P1600143-v18-ET_D.txt"
         ASDFile = "ET-0000A-18_ETDSensitivityCurveTxtFile.txt"
     elseif name == "CE"
         ASDFile = "LIGO-P1600143-v18-CE.txt"
+    elseif name == "BBO"
+        ASDFile = "BBO.txt"
     end
     ASDFile
 end
@@ -84,7 +90,7 @@ struct LIGO <: Detector
         
         # read in the data interpolate ASD 
         ASD_file = joinpath(sensitivity_path, ASDFile(name))
-        println("using $ASD_file")
+#         println("using $ASD_file")
         ASDData = readdlm(ASD_file) 
         
         fsASD = ASDData[:, 1] # frequency
