@@ -1,4 +1,4 @@
-struct TAIQIN <: SpaceDetector
+struct TIANQIN <: SpaceDetector
     TObs::Float # observation time of LISA (yr)
     LArm::Float # Arm length of for every arm of LISA (meter)
     NC::Int # Number of data channels
@@ -22,7 +22,7 @@ struct TAIQIN <: SpaceDetector
     
     ρThSGWB::Float # threshold SNR for deteting a gravitational background
     
-    function TAIQIN(;
+    function TIANQIN(;
             TObs::Float=4., 
             LArm::Float=1.7e8, 
             NC::Int=2, 
