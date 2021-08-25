@@ -50,7 +50,7 @@ struct BBO <: SpaceDetector
             logInter0 = interpolate((logx,), logy, Gridded(Linear()))
             logInter = extrapolate(logInter0, Inf)  
             # convert back to normal scale
-            10^logRInter(log10(f))
+            10^logInter(log10(f))
         end
         Pn(f) = Sn(f) * R(f)
         
