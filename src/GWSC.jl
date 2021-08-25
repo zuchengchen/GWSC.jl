@@ -35,6 +35,8 @@ export YEAR,
 include("utils.jl")
 include("LIGO.jl")
 include("LISA.jl")
+include("TAIJI.jl")
+include("TAIQIN.jl")
 include("PTA.jl")
 include("SNR.jl")
 include("plot.jl")

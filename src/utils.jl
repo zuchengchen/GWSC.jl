@@ -1,5 +1,7 @@
 abstract type Detector end
 
+abstract type SpaceDetector <: Detector end
+
 # spedd of light in vaccum (m/s)
 const c0 = ustrip(float(c_0))
 

@@ -121,7 +121,7 @@ end
 
 `Ωn::Function`: effective energy density of noise
 """
-struct LISA <: Detector
+struct LISA <: SpaceDetector
     TObs::Float # observation time of LISA (yr)
     LArm::Float # Arm length of for every arm of LISA (meter)
     NC::Int # Number of data channels
@@ -195,7 +195,7 @@ end
 
 
 # TODO: add more explanation
-function SNR(det::LISA, Ωgw::Function)
+function SNR(det::SpaceDetector, Ωgw::Function)
     
     fMin, fMax, fRef = det.fMin, det.fMax, det.fRef 
     
