@@ -50,6 +50,6 @@ struct TAIQIN <: SpaceDetector
         
         new(TObs, LArm, NC, fStar, R, 
             fMin, fMax, fRef, fPlotRange, ΩPlotRange, hPlotRange, 
-            Pn, Sn, Pn_WC, Sn_WC, SnC, Ωn, Ωeff, ρThSGWB)
+            Pn, Sn, Ωn, Ωeff, ρThSGWB)
     end       
 end
