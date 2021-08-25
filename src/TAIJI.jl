@@ -41,7 +41,7 @@ struct TAIJI <: SpaceDetector
             L = LArm
             Sx = (8e-12)^2
             Sa = (3e-15)^2
-            (Sx/L^2 + 4Sa/(2π*f)^4/L^2 * (1 + 1e-4/f)) * (1 + (f/1.29/fstar)^2)
+            (Sx/L^2 + 4Sa/(2π*f)^4/L^2 * (1 + 1e-4/f)) * (1 + (f/1.29/fStar)^2)
         end
         Pn(f) = Sn(f) * R(f)
         
