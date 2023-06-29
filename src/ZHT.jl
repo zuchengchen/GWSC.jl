@@ -35,9 +35,9 @@ struct ZHT <: Detector
         ρThSGWB=1.0)
 
         # read in the data interpolate ASD 
-        # ASD_file = joinpath(sensitivity_path, ASDFile(name))
+        ASD_file = joinpath(sensitivity_path, ASDFile(name))
         #         println("using $ASD_file")
-        ASD_file = "data_zht_psd.csv"
+        # ASD_file = "data_zht_psd.csv"
         ASDData = readdlm(ASD_file, ',', Float64)
         ASDData = ASDData[sortperm(ASDData[:, 1]), :]
 
