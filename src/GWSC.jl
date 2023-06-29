@@ -23,6 +23,7 @@ export YEAR,
     Float,
     Detector,
     LIGO,
+    ZHT,
     LISA,
     TAIJI,
     BBO,
@@ -38,6 +39,7 @@ export YEAR,
 
 include("utils.jl")
 include("LIGO.jl")
+include("ZHT.jl")
 include("LISA.jl")
 include("TAIJI.jl")
 include("TIANQIN.jl")
