@@ -1,30 +1,32 @@
 # Set ASD file for different detectors
 function ASDFile(name::String)
     if name == "LIGO_O1"
-        ASDFile = "LIGO-P1200087-v18-aLIGO_EARLY_HIGH.txt"
+        File = "LIGO-P1200087-v18-aLIGO_EARLY_HIGH.txt"
     elseif name == "LIGO_O2"
-        ASDFile = "LIGO-P1200087-v18-aLIGO_MID_LOW.txt"
+        File = "LIGO-P1200087-v18-aLIGO_MID_LOW.txt"
     elseif name == "LIGO_O3"
-        ASDFile = "o3_l1.txt"
+        File = "o3_l1.txt"
     elseif name == "LIGO_O32"
-        ASDFile = "LIGO-P1200087-v18-aLIGO_MID_HIGH.txt"
+        File = "LIGO-P1200087-v18-aLIGO_MID_HIGH.txt"
     elseif name == "LIGO_O5"
-        ASDFile = "LIGO-P1200087-v18-aLIGO_LATE_HIGH.txt"
+        File = "LIGO-P1200087-v18-aLIGO_LATE_HIGH.txt"
     elseif name == "KAGRA_Design"
-        ASDFile = "LIGO-T1600593-v1-KAGRA_Design.txt"
+        File = "LIGO-T1600593-v1-KAGRA_Design.txt"
     elseif name == "LIGO_Design"
-        ASDFile = "aligo_design.txt"
+        File = "aligo_design.txt"
     elseif name == "LIGO_Design2"
-        ASDFile = "LIGO-P1200087-v18-aLIGO_DESIGN.txt"
+        File = "LIGO-P1200087-v18-aLIGO_DESIGN.txt"
     elseif name == "ET"
-        #         ASDFile = "LIGO-P1600143-v18-ET_D.txt"
-        ASDFile = "ET-0000A-18_ETDSensitivityCurveTxtFile.txt"
+        #         File = "LIGO-P1600143-v18-ET_D.txt"
+        File = "ET-0000A-18_ETDSensitivityCurveTxtFile.txt"
     elseif name == "CE"
-        ASDFile = "LIGO-P1600143-v18-CE.txt"
+        File = "LIGO-P1600143-v18-CE.txt"
     elseif name == "BBO"
-        ASDFile = "BBO.txt"
+        File = "BBO.txt"
+    elseif name == "ZHT"
+        File = "ZHT.txt"
     end
-    ASDFile
+    File
 end
 
 # interpolate two arrays as a function using log-log scales internal
