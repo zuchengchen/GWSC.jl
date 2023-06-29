@@ -17,24 +17,24 @@ const src_path = @__DIR__
 const sensitivity_path = normpath(joinpath(src_path, "sensitivity_data"))
 
 export YEAR,
-       DAY,
-       c0,
-       H0,
-       Float,
-       Detector,
-       LIGO,
-       LISA,
-       TAIJI,
-       BBO,
-       DECIGO,
-       TIANQIN,
-       PTA,
-       plotΩPI,
-       plotCharacteristicStrain,
-       plotSpectralDensity,
-       ΩPI,
-       SNR,
-       backup
+    DAY,
+    c0,
+    H0,
+    Float,
+    Detector,
+    LIGO,
+    LISA,
+    TAIJI,
+    BBO,
+    DECIGO,
+    TIANQIN,
+    PTA,
+    plotΩPI,
+    plotCharacteristicStrain,
+    plotSpectralDensity,
+    ΩPI,
+    SNR,
+    backup
 
 include("utils.jl")
 include("LIGO.jl")

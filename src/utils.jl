@@ -6,10 +6,10 @@ abstract type SpaceDetector <: Detector end
 const c0 = ustrip(float(c_0))
 
 # Julian year in seconds
-const YEAR = ustrip(uconvert(Unitful.s, 1*u"yr"))
+const YEAR = ustrip(uconvert(Unitful.s, 1 * u"yr"))
 
 "Day in seconds"
-const DAY = YEAR/365.25
+const DAY = YEAR / 365.25
 
 # Hubble constant (s^-1)
 const H0 = ustrip(uconvert(u"s"^-1, 67.66 * u"km" * u"Mpc"^-1 * u"s"^-1))
@@ -48,7 +48,7 @@ function backup(array1, array2, fileName::String)
     open(file, "w") do io
         for i in 1:len
             if array2[i] != Inf # throw the infinity numbers
-                write(io, string(array1[i])*"  "*string(array2[i])*"\n")
+                write(io, string(array1[i]) * "  " * string(array2[i]) * "\n")
             end
         end
     end
